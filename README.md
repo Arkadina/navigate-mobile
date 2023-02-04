@@ -1,6 +1,6 @@
 # Navigate mobile
 
-<img src="https://i.imgur.com/2F0F5Q6.jpeg" />
+<img src="https://i.imgur.com/2F0F5Q6.jpeg" width="40%" />
 
 ## Libraries
 
