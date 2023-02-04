@@ -1,27 +1,22 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import First from "./screens/First";
+import Fourth from "./screens/Fourth";
+import Third from "./screens/Third";
+import Second from "./screens/Second";
+
+const Stack = createStackNavigator();
 
 export default function App() {
     return (
-        <SafeAreaProvider>
-            <SafeAreaView style={styles.container}>
-                <Header />
-                <Text>Text</Text>
-                <Text>Text</Text>
-                <Footer />
-            </SafeAreaView>
-        </SafeAreaProvider>
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="First" component={First} />
+                <Stack.Screen name="Second" component={Second} />
+                <Stack.Screen name="Third" component={Third} />
+                <Stack.Screen name="Fourth" component={Fourth} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "space-between",
-    },
-});
